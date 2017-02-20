@@ -1,0 +1,31 @@
+List the components of Hadoop 2.x and explain them in detail
+    Hadoop consists of the following components 
+        a) HDFS : HDFS is hadoop file distributed system.It is advanced than the HDFS in hadoop 1.x.
+        b) Map Reduce : It is a processing module of hadoop 2.x
+        c) YARN : YARN is Yet Another Resource Negotiator.It is the key component.
+            All the components of hadoop works on top of these above mentioned major components
+        *It is a Master-Slave architecture.Both the master and slave nodes contains Map reduce and HDFS components.
+        *Master node has resource manager and HDFS.Slave nodes has node manager and HDFS.
+        *HDFS in master node is called as name node.It stores the metadata.
+        *The resource manager in master node is Map reduce.
+        *There is a second level master node in this architecture which contains node manager,application master and data node.
+        *The application master executes specific programs.
+        *The second level master node contains two or more slave nodes.
+        *The slave nodes have node manager and HDFS.The HDFS of slave node is also called as datanode.
+        *This datanode stores the actual node.There is no application master component.
+        Description :
+                 *The resource manager is divided into Scheduler and Application manager
+                 *The scheduler decides in assigning the resources to the applications.
+                 *The application master interacts with scheduler and node manager.
+                 *Application master acquires resources using scheduler
+                 *Application master interacts with node manager to do specific tasks.
+                 *Each master node or slave node contains container.it is a part of memory on HDFS.
+           The process is
+                 *Client submits an application to the resource manager.
+                 *Resource manager allocates a container.
+                 *Then the related node manager is contacted
+                 *The node manager launches the container.
+                 *Finally container executes the application master
+           
+        Map Reduce is used to process the data stored in HDFS.It analyses the large data sets in parallel.
+        It consists of two daemons-job Tracker and Task Tracker
